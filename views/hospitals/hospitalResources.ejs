@@ -1,0 +1,60 @@
+
+    <title>Hospital Resources</title>
+
+    <%- include('../partials/header') %> 
+
+    <div class="container mt-5" main-content>
+        <h1 class="mb-4">Hospital Resources</h1>
+
+        <!-- Filters -->
+        <form action="/hospitals/filter" method="GET">
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <label for="bloodType" class="form-label">Filter by Blood Type:</label>
+                    <select id="bloodType" name="bloodType" class="form-select">
+                        <option value="">All</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                    </select>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="icuBeds" class="form-label">ICU Beds Availability:</label>
+                    <select id="icuBeds" name="icuBeds" class="form-select">
+                        <option value="">All</option>
+                        <option value="Available">Available</option>
+                        <option value="Not Available">Not Available</option>
+                    </select>
+                </div>
+
+                <div class="col-md-4 d-flex align-items-end">
+                    <button type="submit" class="btn btn-info">Apply Filters</button>
+                </div>
+            </div>
+          </form>
+          
+
+        <!-- Hospitals List -->
+        <div id="hospitalList">
+            <% hospitals.forEach(hospital => { %>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h3><%= hospital.name %></h3>
+                        <p><strong>Address:</strong> <%= hospital.address %></p>
+                        <p><strong>Contact:</strong> <%= hospital.phone %></p>
+                        <p><strong>OPD Schedule:</strong> <%= hospital.opdSchedule %></p>
+                        <p><strong>Blood Stocks:</strong> <%= hospital.bloodStocks.map(stock => `${stock.type}: ${stock.units}`).join(', ') %></p>
+                        <p><strong>ICU Beds:</strong> <%= hospital.icuBeds ? 'Available' : 'Not Available' %></p>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+
+    <%- include('../partials/footer') %> <!-- Include footer -->

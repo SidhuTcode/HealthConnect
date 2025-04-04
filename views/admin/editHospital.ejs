@@ -1,0 +1,51 @@
+<%- include("../partials/header") %>
+<div class="container mt-5 main-content">
+  <h1 class="mb-4">Edit Hospital</h1>
+  <form action="/admin/hospitals/<%= hospital._id %>?_method=PUT" method="POST" class="bg-light p-4 rounded shadow">
+    <div class="mb-3">
+      <label for="name" class="form-label">Hospital Name</label>
+      <input type="text" id="name" name="name" value="<%= hospital.name %>" class="form-control" placeholder="Hospital Name" required />
+    </div>
+    <div class="mb-3">
+      <label for="address" class="form-label">Address</label>
+      <input type="text" id="address" name="address" value="<%= hospital.address %>" class="form-control" placeholder="Address" required />
+    </div>
+    <div class="mb-3">
+      <label for="phone" class="form-label">Phone</label>
+      <input type="text" id="phone" name="phone" value="<%= hospital.phone %>" class="form-control" placeholder="Phone Number" required />
+    </div>
+    <div class="mb-3">
+      <label for="opdSchedule" class="form-label">OPD Schedule</label>
+      <input type="text" id="opdSchedule" name="opdSchedule" value="<%= hospital.opdSchedule %>" class="form-control" placeholder="e.g., Mon-Fri, 9AM-5PM" required />
+    </div>
+    <h4 class="mt-4">Blood Stocks</h4>
+    <div id="bloodStockContainer" class="mb-3">
+      <% hospital.bloodStocks.forEach((stock, index) => { %>
+        <div class="d-flex gap-3 mb-2">
+          <input type="text" name="bloodStocks[<%= index %>][type]" value="<%= stock.type %>" class="form-control" placeholder="Blood Type (e.g., A+)" required />
+          <input type="number" name="bloodStocks[<%= index %>][units]" value="<%= stock.units %>" class="form-control" placeholder="Units" required />
+        </div>
+      <% }) %>
+    </div>
+    <button type="button" class="btn btn-secondary mb-3" onclick="addBloodStock()">Add Blood Stock</button>
+    <div class="form-check mb-3">
+      <input type="checkbox" id="icuBeds" name="icuBeds" class="form-check-input"  const icuBedsBoolean = icuBeds === 'on';>
+      <label for="icuBeds" class="form-check-label">ICU Beds Available</label>
+    </div>
+    <button type="submit" class="btn btn-info">Update Hospital</button>
+  </form>
+</div>
+<br>
+<script>
+  function addBloodStock() {
+    const container = document.getElementById('bloodStockContainer');
+    const index = container.children.length;
+    const stockHTML = `
+      <div class="d-flex gap-3 mb-2">
+        <input type="text" name="bloodStocks[${index}][type]" class="form-control" placeholder="Blood Type (e.g., A+)" required />
+        <input type="number" name="bloodStocks[${index}][units]" class="form-control" placeholder="Units" required />
+      </div>`;
+    container.insertAdjacentHTML('beforeend', stockHTML);
+  }
+</script>
+<%- include("../partials/footer") %>

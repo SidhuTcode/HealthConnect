@@ -1,0 +1,100 @@
+<%- include("../partials/header") %>
+<div class="container mt-5 main-content">
+  <h1 class="mb-4">Manage Doctors</h1>
+
+  <!-- Add Doctor Form -->
+  <form action="/admin/doctors" method="POST" class="mb-5">
+    <div class="mb-3">
+      <label for="name" class="form-label">Doctor Name</label>
+      <input type="text" name="name" id="name" class="form-control" placeholder="Doctor Name"  value="Dr." required />
+    </div>
+    
+    <div class="mb-3">
+      <label for="specialization" class="form-label">Specialization</label>
+      <select name="specialization" id="specialization" class="form-select" required>
+          <option value="" selected disabled>Select Specialization</option>
+          <option value="General Physician">General Physician</option>
+          <option value="Cardiologist">Cardiologist</option>
+          <option value="Dermatologist">Dermatologist</option>
+          <option value="Neurologist">Neurologist</option>
+          <option value="Orthopedic">Orthopedic</option>
+          <option value="Pediatrician">Pediatrician</option>
+          <option value="Psychiatrist">Psychiatrist</option>
+          <option value="Surgeon">Surgeon</option>
+          <option value="Dentist">Dentist</option>
+          <option value="ENT Specialist">ENT Specialist</option>
+          <option value="Ophthalmologist">Ophthalmologist</option>
+          <option value="Oncologist">Oncologist</option>
+          <option value="Gynecologist">Gynecologist</option>
+          <option value="Urologist">Urologist</option>
+          <option value="Nephrologist">Nephrologist</option>
+          <option value="Pulmonologist">Pulmonologist</option>
+          <option value="Endocrinologist">Endocrinologist</option>
+          <option value="Gastroenterologist">Gastroenterologist</option>
+          <option value="Custom">Other (Specify Below)</option>
+      </select>
+  </div>
+  
+  <!-- Custom Specialization Input (Hidden by Default) -->
+  <div class="mb-3" id="customSpecializationDiv" style="display: none;">
+      <label for="customSpecialization" class="form-label">Enter Specialization</label>
+      <input type="text" name="customSpecialization" id="customSpecialization" class="form-control" placeholder="Enter custom specialization" />
+  </div>
+
+    <h4 class="mb-3">Schedule</h4>
+    <div id="scheduleContainer">
+        <div class="scheduleEntry">
+          <label for="schedule[0][date]" class="form-label">Date:</label>
+          <input type="date" name="schedule[0][date]" class="form-control" required />
+          <label for="schedule[0][timeSlots]" class="form-label">Time Slots:</label>
+          <input type="text" name="schedule[0][timeSlots]" class="form-control" placeholder="Comma-separated time slots" required />
+        </div>
+      </div>
+<br>
+    <button type="button" class="btn btn-secondary" onclick="addSchedule()">Add Schedule</button>
+    <button type="submit" class="btn btn-info">Add Doctor</button>
+  </form>
+
+  <!-- List of Doctors -->
+  <h3>Doctors List</h3>
+  <ul class="list-group">
+    <% doctors.forEach((doctor) => { %>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <span><%= doctor.name %> - <%= doctor.specialization %></span>
+        <div>
+          <a href="/admin/doctors/<%= doctor._id %>/edit" class="btn btn-sm btn-warning me-2">Edit</a>
+          <form action="/admin/doctors/<%= doctor._id %>?_method=DELETE" method="POST" style="display:inline;">
+            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+          </form>
+        </div>
+      </li>
+    <% }) %>
+  </ul>
+</div>
+
+<script>
+  function addSchedule() {
+    const container = document.getElementById('scheduleContainer');
+    const index = container.children.length;
+    const scheduleHTML = `
+      <div class="mb-3">
+        <label for="scheduleDate" class="form-label">Date</label>
+        <input type="date" name="schedule[${index}][date]" class="form-control" required />
+        <label for="scheduleTimeSlots" class="form-label">Time Slots</label>
+        <input type="text" name="schedule[${index}][timeSlots]" class="form-control" placeholder="Comma-separated time slots" required />
+      </div>`;
+    container.insertAdjacentHTML('beforeend', scheduleHTML);
+  }
+
+  document.getElementById("specialization").addEventListener("change", function() {
+        const customSpecializationDiv = document.getElementById("customSpecializationDiv");
+        if (this.value === "Custom") {
+            customSpecializationDiv.style.display = "block";
+        } else {
+            customSpecializationDiv.style.display = "none";
+            document.getElementById("customSpecialization").value = ""; // Clear custom input when hidden
+        }
+    });
+</script>
+<br>
+<%- include("../partials/footer") %>

@@ -1,0 +1,178 @@
+[
+  {
+    "name": "City General Hospital",
+    "address": "123 Main Street, Cityville",
+    "phone": "555-123-4567",
+    "opdSchedule": "Mon-Fri, 9AM-5PM",
+    "bloodStocks": [
+      { "type": "A+", "units": 10 },
+      { "type": "O-", "units": 5 }
+    ],
+    "icuBeds": true
+  },
+  {
+    "name": "Greenwood Medical Center",
+    "address": "456 Oak Street, Greenwood",
+    "phone": "555-987-6543",
+    "opdSchedule": "24/7",
+    "bloodStocks": [
+      { "type": "B+", "units": 8 },
+      { "type": "AB+", "units": 3 }
+    ],
+    "icuBeds": false
+  },
+  {
+    "name": "Hillside Community Hospital",
+    "address": "789 Hill Rd, Springfield",
+    "phone": "555-654-3210",
+    "opdSchedule": "Mon-Sat, 8AM-6PM",
+    "bloodStocks": [
+      { "type": "O+", "units": 15 },
+      { "type": "A-", "units": 6 }
+    ],
+    "icuBeds": true
+  },
+  {
+    "name": "Sunrise Health Clinic",
+    "address": "101 Sunrise Ave, Lakeside",
+    "phone": "555-852-9637",
+    "opdSchedule": "Mon-Sun, 7AM-3PM",
+    "bloodStocks": [
+      { "type": "A+", "units": 12 },
+      { "type": "B-", "units": 4 }
+    ],
+    "icuBeds": false
+  },
+  {
+    "name": "Riverside Hospital",
+    "address": "202 Riverbank St, Rivertown",
+    "phone": "555-741-8529",
+    "opdSchedule": "Mon-Fri, 9AM-5PM",
+    "bloodStocks": [
+      { "type": "O-", "units": 7 },
+      { "type": "AB-", "units": 2 }
+    ],
+    "icuBeds": true
+  },
+  {
+    "name": "Valleyview Medical Center",
+    "address": "303 Valley Rd, Valleyview",
+    "phone": "555-369-2587",
+    "opdSchedule": "Mon-Sat, 8AM-6PM",
+    "bloodStocks": [
+      { "type": "B+", "units": 9 },
+      { "type": "A-", "units": 5 }
+    ],
+    "icuBeds": false
+  },
+  {
+    "name": "Central City Hospital",
+    "address": "404 Main Blvd, Central City",
+    "phone": "555-159-7532",
+    "opdSchedule": "24/7",
+    "bloodStocks": [
+      { "type": "A+", "units": 14 },
+      { "type": "O+", "units": 8 }
+    ],
+    "icuBeds": true
+  },
+  {
+    "name": "Mountainview Hospital",
+    "address": "505 Summit St, Mountainview",
+    "phone": "555-987-1122",
+    "opdSchedule": "Mon-Fri, 10AM-6PM",
+    "bloodStocks": [
+      { "type": "O-", "units": 6 },
+      { "type": "B-", "units": 3 }
+    ],
+    "icuBeds": false
+  },
+  {
+    "name": "Seaside Medical Center",
+    "address": "606 Beach Ave, Seaside",
+    "phone": "555-432-6789",
+    "opdSchedule": "Mon-Sun, 9AM-5PM",
+    "bloodStocks": [
+      { "type": "AB+", "units": 5 },
+      { "type": "A-", "units": 7 }
+    ],
+    "icuBeds": true
+  },
+  {
+    "name": "Forestview Hospital",
+    "address": "707 Pine Rd, Forestview",
+    "phone": "555-741-3698",
+    "opdSchedule": "Mon-Sat, 7AM-4PM",
+    "bloodStocks": [
+      { "type": "A+", "units": 10 },
+      { "type": "B+", "units": 6 }
+    ],
+    "icuBeds": false
+  },
+  {
+    "name": "Lakeside Medical Center",
+    "address": "808 Lake St, Lakeside",
+    "phone": "555-321-9876",
+    "opdSchedule": "24/7",
+    "bloodStocks": [
+      { "type": "O+", "units": 13 },
+      { "type": "A-", "units": 5 }
+    ],
+    "icuBeds": true
+  },
+  {
+    "name": "Downtown General Hospital",
+    "address": "909 Downtown Ave, Metro City",
+    "phone": "555-753-1598",
+    "opdSchedule": "Mon-Fri, 8AM-5PM",
+    "bloodStocks": [
+      { "type": "AB+", "units": 4 },
+      { "type": "O-", "units": 9 }
+    ],
+    "icuBeds": false
+  },
+  {
+    "name": "Westside Healthcare",
+    "address": "111 Westside Rd, Westside",
+    "phone": "555-654-7531",
+    "opdSchedule": "Mon-Sat, 9AM-6PM",
+    "bloodStocks": [
+      { "type": "A+", "units": 11 },
+      { "type": "B-", "units": 3 }
+    ],
+    "icuBeds": true
+  },
+  {
+    "name": "East End Hospital",
+    "address": "222 East Blvd, Eastend",
+    "phone": "555-789-4561",
+    "opdSchedule": "Mon-Fri, 7AM-3PM",
+    "bloodStocks": [
+      { "type": "B+", "units": 6 },
+      { "type": "O+", "units": 10 }
+    ],
+    "icuBeds": false
+  },
+  {
+    "name": "Northern Medical Center",
+    "address": "333 North St, Northend",
+    "phone": "555-852-1597",
+    "opdSchedule": "24/7",
+    "bloodStocks": [
+      { "type": "O-", "units": 4 },
+      { "type": "AB-", "units": 2 }
+    ],
+    "icuBeds": true
+  },
+  {
+    "name": "Southern Health Hospital",
+    "address": "444 South Rd, Southtown",
+    "phone": "555-963-2584",
+    "opdSchedule": "Mon-Sun, 9AM-4PM",
+    "bloodStocks": [
+      { "type": "A+", "units": 8 },
+      { "type": "B+", "units": 12 }
+    ],
+    "icuBeds": false
+  }
+]

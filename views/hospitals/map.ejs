@@ -1,0 +1,136 @@
+
+  <title>Find Nearby Hospitals</title>
+  <%- include("../partials/header")%>
+   
+  <style>
+    #googleMap {
+      width: 100%;
+      height: 500px;
+      margin-top: 20px;
+    }
+    #search-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    #search-box {
+      width: 300px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .view-toggle {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .view-toggle a {
+      margin-right: 15px;
+      text-decoration: none;
+      color: #17a2b8; /* Info color */
+    }
+    .view-toggle a.active {
+      font-weight: bold;
+    }
+    </style>
+    <div class="container mt-4 main-content">
+  <div class="container">
+  <h1>Find Nearby Hospitals</h1>
+  <div class="view-toggle">
+    <a href="/hospitals" ><i class="fas fa-list"></i> List View</a>
+    <a href="/hospitals/map" class="active"><i class="fas fa-map-marked-alt"></i> Map View</a>
+  </div>
+  <div id="search-container">
+    <input id="search-box" type="text" placeholder="Enter a city name..." />
+    <button id="search-button" class="btn btn-info btn-lg me-2" >Search</button>
+  </div>
+  <div id="googleMap"></div>
+</div>
+</div>
+<br>
+<%- include("../partials/footer") %>
+  <script>
+    let map, service, infowindow;
+
+    function initMap() {
+      const initialLocation = { lat: 43.452969, lng: -80.495697 }; 
+      map = new google.maps.Map(document.getElementById("googleMap"), {
+        center: initialLocation,
+        zoom: 7,
+      });
+
+      infowindow = new google.maps.InfoWindow();
+
+      const searchButton = document.getElementById("search-button");
+  const searchBox = document.getElementById("search-box");
+
+  // Event listener for search button click
+  searchButton.addEventListener("click", () => {
+    performSearch();
+  });
+
+  // Event listener for pressing Enter in the input box
+  searchBox.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault(); // Prevent form submission or other default behaviors
+      performSearch();
+    }
+  });
+}
+
+function performSearch() {
+  const cityName = document.getElementById("search-box").value.trim();
+  if (cityName) {
+    searchHospitalsInCity(cityName);
+  } else {
+    alert("Please enter a city name.");
+  }
+}
+
+    function searchHospitalsInCity(cityName) {
+      const request = {
+        query: `hospitals in ${cityName}`,
+        fields: ["name", "geometry", "formatted_address"],
+      };
+
+      service = new google.maps.places.PlacesService(map);
+      service.textSearch(request, (results, status) => {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+          map.setCenter(results[0].geometry.location);
+          map.setZoom(13);
+          clearMarkers();
+          results.forEach((place) => {
+            const marker = new google.maps.Marker({
+              position: place.geometry.location,
+              map: map,
+              title: place.name,
+               
+            });
+
+            google.maps.event.addListener(marker, "click", () => {
+              infowindow.setContent(
+                `<strong>${place.name}</strong><br>${place.formatted_address}`
+              );
+              infowindow.open(map, marker);
+            });
+          });
+        } else {
+          alert("No hospitals found in the specified city.");
+        }
+      });
+    }
+
+    function clearMarkers() {
+      // Clear existing markers from the map
+      const markers = document.querySelectorAll(".gm-marker");
+      markers.forEach((marker) => marker.parentNode.removeChild(marker));
+    }
+  </script>
+
+<script
+src="https://maps.googleapis.com/maps/api/js?key=Past the google maps api key here&libraries=places&callback=initMap"
+async
+></script>
+  
+
+

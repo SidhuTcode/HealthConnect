@@ -1,0 +1,48 @@
+<%- include("../partials/header") %>
+<div class="container mt-5 main-content">
+  <h1>Edit Doctor</h1>
+
+  <!-- Edit Doctor Form -->
+  <form action="/admin/doctors/<%= doctor._id %>?_method=PUT" method="POST">
+    <div class="mb-3">
+      <label for="name" class="form-label">Doctor Name</label>
+      <input type="text" name="name" id="name" class="form-control" value="<%= doctor.name %>" placeholder="Doctor Name" required />
+    </div>
+
+    <div class="mb-3">
+      <label for="specialization" class="form-label">Specialization</label>
+      <input type="text" name="specialization" id="specialization" class="form-control" value="<%= doctor.specialization %>" placeholder="Specialization" required />
+    </div>
+
+    <h4 class="mb-3">Schedule</h4>
+    <div id="scheduleContainer">
+      <% doctor.schedule.forEach((entry, index) => { %>
+        <div class="mb-3">
+          <label for="scheduleDate<%= index %>" class="form-label">Date</label>
+          <input type="date" name="schedule[<%= index %>][date]" id="scheduleDate<%= index %>" class="form-control" value="<%= entry.date %>" required />
+          <label for="scheduleTimeSlots<%= index %>" class="form-label">Time Slots</label>
+          <input type="text" name="schedule[<%= index %>][timeSlots]" id="scheduleTimeSlots<%= index %>" class="form-control" value="<%= entry.timeSlots.join(', ') %>" placeholder="Comma-separated time slots" required />
+        </div>
+      <% }) %>
+    </div>
+    <button type="button" class="btn btn-secondary " onclick="addSchedule()">Add Schedule</button>
+    <button type="submit" class="btn btn-info">Update Doctor</button>
+  </form>
+</div>
+
+<script>
+  function addSchedule() {
+    const container = document.getElementById('scheduleContainer');
+    const index = container.children.length;
+    const scheduleHTML = `
+      <div class="mb-3">
+        <label for="scheduleDate${index}" class="form-label">Date</label>
+        <input type="date" name="schedule[${index}][date]" id="scheduleDate${index}" class="form-control" required />
+        <label for="scheduleTimeSlots${index}" class="form-label">Time Slots</label>
+        <input type="text" name="schedule[${index}][timeSlots]" id="scheduleTimeSlots${index}" class="form-control" placeholder="Comma-separated time slots" required />
+      </div>`;
+    container.insertAdjacentHTML('beforeend', scheduleHTML);
+  }
+</script>
+<br>
+<%- include("../partials/footer") %>

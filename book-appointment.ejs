@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Appointment</title>
+</head>
+<body>
+  <h1>Book Appointment</h1>
+  <div id="hospital-details"></div>
+  <form>
+    <!-- Add your booking form fields here -->
+    <button type="submit">Confirm Appointment</button>
+  </form>
+
+  <script>
+    // Retrieve query parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const hospitalName = urlParams.get("name");
+    const hospitalAddress = urlParams.get("address");
+
+    // Display hospital details
+    document.getElementById("hospital-details").innerHTML = `
+      <strong>Hospital Name:</strong> ${hospitalName}<br>
+      <strong>Address:</strong> ${hospitalAddress}
+    `;
+  </script>
+</body>
+</html>

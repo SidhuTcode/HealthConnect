@@ -1,0 +1,53 @@
+
+  <html>
+  <title><%= title %></title>
+
+<body>
+    <%- include('../partials/header') %>
+
+    <div class="container mt-5 main-content">
+        <h1 class="text-center mb-4">Health Resources</h1>
+        <p class="lead text-center">Explore curated health tips, articles, and resources to help you stay informed and healthy.</p>
+        
+        <section class="row mt-5">
+            <div class="col-md-4">
+                <div class="card">
+                    
+                    <img src="/img/healthTip.png" class="card-img-top" alt="Health Tips" height="200px">
+                    <div class="card-body">
+                        <h5 class="card-title">Health Tips</h5>
+                        <p class="card-text">Discover practical tips to maintain a healthy lifestyle, including exercise, diet, and stress management.</p>
+                        <a href="/resources/tips" class="btn btn-info">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="/img/healthArticle.png" class="card-img-top" alt="Health Articles" height="200px">
+                    <div class="card-body">
+                        <h5 class="card-title">Health Articles</h5>
+                        <p class="card-text">Read articles from trusted sources covering a variety of health-related topics.</p>
+                        <a href="/resources/articles" class="btn btn-info">Read Articles</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="/img/additionalResource.png" class="card-img-top" alt="Additional Resources" height="200px">
+                    <div class="card-body">
+                        <h5 class="card-title">Additional Resources</h5>
+                        <p class="card-text">Access a collection of helpful resources, such as health apps, videos, and community support groups.</p>
+                        <a href="/resources/additional" class="btn btn-info">View Resources</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+   <br>
+
+    <%- include('../partials/footer') %>
+</body>
+</html>

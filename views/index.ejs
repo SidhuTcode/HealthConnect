@@ -1,0 +1,83 @@
+<html>
+<head>
+
+<link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+  <div class="container mt-4 main-content">
+<div class="jumbotron bg-light p-5 rounded">
+  <h1 class="display-4">Welcome to Health Connect</h1>
+  <p class="lead">A comprehensive platform for finding hospitals, booking appointments, and managing healthcare resources.</p>
+  <hr class="my-4">
+  <p>Register an account to access all features or login if you already have an account.</p>
+  <div class="d-flex">
+    <a class="btn btn-info btn-lg me-2" href="/register" role="button">Register</a>
+    <a class="btn btn-outline-info btn-lg" href="/login" role="button">Login</a>
+  </div>
+</div>
+
+<div class="row mt-5">
+  <div class="col-md-4 mb-4">
+    <div class="card h-100">
+      <div class="card-body text-center">
+        <i class="fas fa-map-marker-alt fa-3x text-info mb-3"></i>
+        <h5 class="card-title">Find Nearby Hospitals</h5>
+        <p class="card-text">Locate hospitals near you with Google Maps integration and find the closest healthcare facility.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 mb-4">
+    <div class="card h-100">
+      <div class="card-body text-center">
+        <i class="fas fa-calendar-check fa-3x text-info mb-3"></i>
+        <h5 class="card-title">Book Appointments</h5>
+        <p class="card-text">Schedule appointments with specialists at your preferred hospital with our easy-to-use booking system.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 mb-4">
+    <div class="card h-100">
+      <div class="card-body text-center">
+        <i class="fas fa-procedures fa-3x text-info mb-3"></i>
+        <h5 class="card-title">Check Hospital Resources</h5>
+        <p class="card-text">View real-time availability of hospital resources like beds and blood stocks.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-3">
+  <div class="col-md-4 mb-4">
+    <div class="card h-100">
+      <div class="card-body text-center">
+        <i class="fas fa-history fa-3x text-info mb-3"></i>
+        <h5 class="card-title">Appointment History</h5>
+        <p class="card-text">Keep track of your past and upcoming appointments for better healthcare management.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 mb-4">
+    <div class="card h-100">
+      <div class="card-body text-center">
+        <i class="fas fa-star fa-3x text-info mb-3"></i>
+        <h5 class="card-title">Feedback System</h5>
+        <p class="card-text">Rate your experience and provide valuable feedback to help improve healthcare services.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 mb-4">
+    <div class="card h-100">
+      <div class="card-body text-center">
+        <i class="fas fa-book-medical fa-3x text-info mb-3"></i>
+        <h5 class="card-title">Health Resources</h5>
+        <p class="card-text">Access valuable health resources, tips, and articles for your well-being.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<%- include('partials/footer') %>
+  
+</body>
+</html>

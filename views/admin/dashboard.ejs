@@ -1,0 +1,65 @@
+<%- include("../partials/header") %>
+
+<div class="container mt-5 main-content">
+    <h1 class="text-center mb-4">Admin Dashboard</h1>
+    
+    <!-- Stats Overview -->
+    <div class="row mb-4">
+        <div class="col-md-4">
+            <div class="card text-white bg-primary">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-user-md"></i> Total Doctors</h5>
+                    <p class="card-text fs-3"><%= doctorCount || 0 %></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white bg-success">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-hospital"></i> Total Hospitals</h5>
+                    <p class="card-text fs-3"><%= hospitalCount || 0 %></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white bg-warning">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-users"></i> Registered Users</h5>
+                    <p class="card-text fs-3"><%= userCount || 0 %></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Actions -->
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body text-center">
+                    <i class="fas fa-user-md fa-3x text-primary"></i>
+                    <h5 class="card-title mt-3">Manage Doctors</h5>
+                    <p class="card-text">Add, update, or remove doctors from the system.</p>
+                    <a href="/admin/doctors" class="btn btn-primary">Go to Doctors</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body text-center">
+                    <i class="fas fa-hospital fa-3x text-success"></i>
+                    <h5 class="card-title mt-3">Manage Hospitals</h5>
+                    <p class="card-text">Oversee hospital listings and manage their details.</p>
+                    <a href="/admin/hospitals" class="btn btn-success">Go to Hospitals</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logout -->
+    <div class="text-center mt-4">
+        <a href="/logout" class="btn btn-danger"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+</div>
+<br>
+<%- include("../partials/footer") %>

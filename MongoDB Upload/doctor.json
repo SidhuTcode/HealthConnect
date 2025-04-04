@@ -1,0 +1,212 @@
+[
+  {
+    "name": "Dr. Robert Brown",
+    "specialization": "Pediatrician",
+    "schedule": [
+      {
+        "date": "2025-04-29",
+        "timeSlots": ["2:00 PM", "3:00 PM", "1:00 PM"]
+      },
+      {
+        "date": "2025-04-15",
+        "timeSlots": ["12:00 PM", "10:00 AM", "4:00 PM"]
+      }
+    ]
+  },
+  {
+    "name": "Dr. John Wilson",
+    "specialization": "Endocrinologist",
+    "schedule": [
+      {
+        "date": "2025-04-30",
+        "timeSlots": ["12:00 PM", "4:00 PM", "3:00 PM"]
+      },
+      {
+        "date": "2025-04-24",
+        "timeSlots": ["11:00 AM", "8:00 AM", "3:00 PM"]
+      }
+    ]
+  },
+  {
+    "name": "Dr. Sarah Johnson",
+    "specialization": "Neurologist",
+    "schedule": [
+      {
+        "date": "2025-04-24",
+        "timeSlots": ["2:00 PM", "11:00 AM", "12:00 PM"]
+      },
+      {
+        "date": "2025-04-25",
+        "timeSlots": ["3:00 PM", "9:00 AM", "4:00 PM"]
+      }
+    ]
+  },
+  {
+    "name": "Dr. Jessica Wilson",
+    "specialization": "Pediatrician",
+    "schedule": [
+      {
+        "date": "2025-04-26",
+        "timeSlots": ["1:00 PM", "8:00 AM", "9:00 AM"]
+      },
+      {
+        "date": "2025-04-16",
+        "timeSlots": ["9:00 AM", "11:00 AM", "3:00 PM"]
+      }
+    ]
+  },
+  {
+    "name": "Dr. David Davis",
+    "specialization": "Orthopedic Surgeon",
+    "schedule": [
+      {
+        "date": "2025-04-11",
+        "timeSlots": ["11:00 AM", "2:00 PM", "8:00 AM"]
+      },
+      {
+        "date": "2025-04-17",
+        "timeSlots": ["9:00 AM", "2:00 PM", "10:00 AM"]
+      }
+    ]
+  },
+  {
+    "name": "Dr. Emily Martinez",
+    "specialization": "Dermatologist",
+    "schedule": [
+      {
+        "date": "2025-04-18",
+        "timeSlots": ["10:00 AM", "1:00 PM", "3:00 PM"]
+      },
+      {
+        "date": "2025-04-22",
+        "timeSlots": ["11:00 AM", "4:00 PM", "2:00 PM"]
+      }
+    ]
+  },
+  {
+    "name": "Dr. James Miller",
+    "specialization": "Ophthalmologist",
+    "schedule": [
+      {
+        "date": "2025-04-19",
+        "timeSlots": ["9:00 AM", "12:00 PM", "5:00 PM"]
+      },
+      {
+        "date": "2025-04-21",
+        "timeSlots": ["8:00 AM", "10:00 AM", "1:00 PM"]
+      }
+    ]
+  },
+  {
+    "name": "Dr. Olivia Hernandez",
+    "specialization": "Cardiologist",
+    "schedule": [
+      {
+        "date": "2025-04-20",
+        "timeSlots": ["7:00 AM", "11:00 AM", "4:00 PM"]
+      },
+      {
+        "date": "2025-04-23",
+        "timeSlots": ["2:00 PM", "3:00 PM", "5:00 PM"]
+      }
+    ]
+  },
+  {
+    "name": "Dr. Daniel White",
+    "specialization": "General Surgeon",
+    "schedule": [
+      {
+        "date": "2025-04-25",
+        "timeSlots": ["9:00 AM", "1:00 PM", "4:00 PM"]
+      },
+      {
+        "date": "2025-04-27",
+        "timeSlots": ["10:00 AM", "2:00 PM", "5:00 PM"]
+      }
+    ]
+  },
+  {
+    "name": "Dr. Sophia Clark",
+    "specialization": "Oncologist",
+    "schedule": [
+      {
+        "date": "2025-04-28",
+        "timeSlots": ["8:00 AM", "12:00 PM", "3:00 PM"]
+      },
+      {
+        "date": "2025-04-30",
+        "timeSlots": ["9:00 AM", "2:00 PM", "4:00 PM"]
+      }
+    ]
+  },
+  {
+    "name": "Dr. William Anderson",
+    "specialization": "Rheumatologist",
+    "schedule": [
+      {
+        "date": "2025-04-14",
+        "timeSlots": ["11:00 AM", "2:00 PM", "5:00 PM"]
+      },
+      {
+        "date": "2025-04-16",
+        "timeSlots": ["9:00 AM", "12:00 PM", "3:00 PM"]
+      }
+    ]
+  },
+  {
+    "name": "Dr. Isabella King",
+    "specialization": "Gastroenterologist",
+    "schedule": [
+      {
+        "date": "2025-04-13",
+        "timeSlots": ["10:00 AM", "1:00 PM", "3:00 PM"]
+      },
+      {
+        "date": "2025-04-15",
+        "timeSlots": ["8:00 AM", "2:00 PM", "4:00 PM"]
+      }
+    ]
+  },
+  {
+    "name": "Dr. Benjamin Scott",
+    "specialization": "Urologist",
+    "schedule": [
+      {
+        "date": "2025-04-17",
+        "timeSlots": ["7:00 AM", "9:00 AM", "1:00 PM"]
+      },
+      {
+        "date": "2025-04-19",
+        "timeSlots": ["10:00 AM", "3:00 PM", "5:00 PM"]
+      }
+    ]
+  },
+  {
+    "name": "Dr. Mia Lewis",
+    "specialization": "Psychiatrist",
+    "schedule": [
+      {
+        "date": "2025-04-21",
+        "timeSlots": ["9:00 AM", "11:00 AM", "2:00 PM"]
+      },
+      {
+        "date": "2025-04-23",
+        "timeSlots": ["8:00 AM", "12:00 PM", "4:00 PM"]
+      }
+    ]
+  },
+  {
+    "name": "Dr. Alexander Green",
+    "specialization": "Pulmonologist",
+    "schedule": [
+      {
+        "date": "2025-04-26",
+        "timeSlots": ["10:00 AM", "1:00 PM", "3:00 PM"]
+      },
+      {
+        "date": "2025-04-28",
+        "timeSlots": ["9:00 AM", "12:00 PM", "5:00 PM"]
+      }
+    ]
+  }
+]

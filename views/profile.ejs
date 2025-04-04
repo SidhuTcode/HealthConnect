@@ -1,0 +1,24 @@
+<%- include("partials/header") %>
+
+<div class="container mt-5">
+  <h1 class="mb-4">User Profile</h1>
+
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title"><%= user.name %></h4>
+      <p class="card-text"><strong>Email:</strong> <%= user.email %></p>
+      <p class="card-text"><strong>Role:</strong> <%= user.role %></p>
+      <p class="card-text"><strong>Joined On:</strong> <%= new Date(user.date).toDateString() %></p>
+      
+      
+        <a class="btn btn-outline-info btn-lg" role="button" href="/logout">Logout</a>
+      
+    </div>
+  </div>
+</div>
+ 
+<br>
+<br>
+<br>
+
+<%- include("partials/footer") %>
